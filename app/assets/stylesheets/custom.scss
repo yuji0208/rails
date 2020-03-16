@@ -1,0 +1,60 @@
+/*新しくファイルを作成する理由は、このアプリケーション独自のCSSを書いていくので、他のファイルと分別して管理したいから*/
+h1, h2 {
+    font-weight: 100;
+}
+.text-white {
+    color: #fff;
+}
+.btn-white {
+    color: #fff;
+    border: 1px solid #fff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 20px;
+    background-color: rgba(0,0,0,0);
+    &:hover {
+        color: #fff;
+    }
+}
+
+.top-hero-wrapper {
+    width: 100vw;/*vw=ビューポート（表示領域）の幅に対する割合*/
+    height: 100vh;/*vh=ビューポート（表示領域）の高さに対する割合*/
+    background-image: url('bg-top.png');
+    background-position: center; /*背景画像の表示開始位置を指定する*/
+    background-repeat: no-repeat; /*背景画像のリピートの仕方*/
+    background-attachment: fixed; /*背景画像の移動（スクロール）、固定を指定*/
+    background-size: cover;
+    background-color: #464646;
+}
+.top-hero-container {
+    padding-top: 220px;
+    h1 {
+        font-size: 56px;
+        margin-bottom: 20px;
+    }
+    h2 {
+        margin-bottom: 60px;
+    }
+}
+.form-controll {
+    height: 45px;
+}
+.users-new-wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-image: image-url('bg-top.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+    
+    .users-new-container {
+        padding-top: 220px;
+        
+        .form-group {
+            margin-bottom:20px;
+        }
+    }
+}
