@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(name: params[:user][:name], email: params[:user][:email]) #params=送られてきた値を受け取るメソッド
+    @user = User.new(user_params) #params=送られてきた値を受け取るメソッド
     if @user.save
       redirect_to root_path , success: "登録が完了しました"
       #redirect_toは指定したpath(URL)に転送
@@ -12,5 +12,10 @@ class UsersController < ApplicationController
       flash.now[:danger] = "登録に失敗しました" #.nowをつけた場合、移動した次のページのみメッセージが表示されるようになり、その次のページでは表示されない仕組みになります。
       render :new #データを取得して表示する場合
     end
+  end
+  
+  private
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end
