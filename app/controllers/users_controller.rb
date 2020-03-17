@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   end
   
   def create
-    binding.pry
     @user = User.new(name: params[:user][:name], email: params[:user][:email]) #params=送られてきた値を受け取るメソッド
     if @user.save
       redirect_to root_path , success: "登録が完了しました"
