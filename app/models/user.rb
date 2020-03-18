@@ -9,5 +9,5 @@ class User < ApplicationRecord
     validates :password, presence: true
     validates :password, format: { with: VALID_PASSWORD_REGEX}
     
-    has_secure_password
+    has_secure_password #パスワードの実装メソッド
 end
