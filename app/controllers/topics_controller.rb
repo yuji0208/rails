@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   def index
-    @topics = Topic.all
+    @topics = Topic.all.includes(:favorite_users) #includesメソッドは、指定したモデルのデータを一括で取得しキャッシュしておくことで「N+1問題」を防ぐことのできるメソッド
   end
   
   def new

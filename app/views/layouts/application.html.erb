@@ -22,9 +22,9 @@
           <span><%= image_tag "icons/logo.png", class: "navbar-brand" %></span>
         <% end %>
         <ul class="nav navbar-nav navbar-right">
-          <% if logged_in? %>
+          <% if logged_in? %> <!--ログインしている場合-->
             <li>
-              <%= link_to new_topic_path do %>
+              <%= link_to favorites_index_path do %>
                 <%= image_tag "icons/heart.png" %>
               <% end %>
             </li>
@@ -38,7 +38,7 @@
                 <%= image_tag "icons/logout.png" %>
               <% end %>
             </li>
-          <% else %>
+          <% else %> <!--ログインできていない場合-->
             <li>
               <%= link_to new_user_path do %>
                 <%= image_tag "icons/register.png" %>

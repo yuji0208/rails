@@ -3,11 +3,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email:email_params[:email])
-    if user && user.authenticate(password_params[:password])
-      log_in user
+    user = User.find_by(email:email_params[:email]) #フォームから送信されたメールアドレスを取得し、一致するユーザーを検索
+    if user && user.authenticate(password_params[:password]) #ユーザーのパスワードが正しいか確かめる
+      log_in user #true
       redirect_to root_path, success: 'ログインに成功しました'
-    else
+    else #false
       flash.now[:danger] = 'ログインに失敗しました'
       render :new
     end
@@ -24,8 +24,8 @@ class SessionsController < ApplicationController
   end
   
   def log_out
-    session.delete(:user_id)
-    @current_user = nil
+    session.delete(:user_id) #セッションに保存されているuser_idを削除することでログアウトの実行
+    @current_user = nil #ユーザー情報を削除
   end
   def email_params
     params.require(:session).permit(:email)
