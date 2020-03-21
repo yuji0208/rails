@@ -8,7 +8,7 @@ class TopicsController < ApplicationController
   end
   
   def create
-    @topic = current_user.topics.new(topic_params)
+    @topic = current_user.topics.new(params_topic)
     
     if @topic.save
       redirect_to topics_path, success: "投稿に成功しました"
@@ -20,6 +20,6 @@ class TopicsController < ApplicationController
   
   private
   def topic_params
-    params.require(:topic).permit(:image, :description)
+    params.require(:topic).permit(:image, :description, :comment)
   end
 end
