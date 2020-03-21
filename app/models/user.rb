@@ -14,5 +14,5 @@ class User < ApplicationRecord
     has_many :topics #Userは複数のtopicを持つ
     has_many :favorites #Userは複数のfavoriteを持つ
     has_many :favorite_topics, through: :favorites, source: 'topic'
-    
+    has_many :comments
 end
