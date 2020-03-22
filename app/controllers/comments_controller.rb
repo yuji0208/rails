@@ -4,10 +4,10 @@ class CommentsController < ApplicationController
   end
   
   def create
-    @comment = Comment.new(params_comment)
+    @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
-    @comment.topic_id = params[:topic_id]
-  
+    
+   
     if @comment.save
       redirect_to topics_path, success: "コメントを投稿しました"#成功
     else#失敗
