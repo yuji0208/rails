@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   end
   
   def create
-    @comment = Comment.new(comment_params)
+    @comment = Comment.new(params_comment)
     @comment.user_id = current_user.id
     @comment.topic_id = params[:topic_id]
   
@@ -18,6 +18,6 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:description)
+    params.require(:comment).permit(:comment, :topic_id)
   end
 end
