@@ -2,7 +2,6 @@ class Topic < ApplicationRecord
   validates :user_id, presence: true
   validates :description, presence: true
   validates :image, presence: true
-  validates :comment, presence: true  
   #presence: trueは記入欄が空白ではダメ
   
   
