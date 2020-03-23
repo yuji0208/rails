@@ -97,6 +97,7 @@ h1, h2 {
 
 .topic-new-wrapper {
     padding-top: 120px;
+    margin-top: 100px;
 }
 .topic-index-wrapper {
     padding-top: 70px;
@@ -141,4 +142,7 @@ h1, h2 {
           filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
         }
     }
+}
+.comments-new-wrapper {
+    padding-top: 120px;
 }
